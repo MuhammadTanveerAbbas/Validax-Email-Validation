@@ -46,5 +46,5 @@ No server-side code. No overhead. Just pure performance.
 Clone the repository:
 
 ```bash
-git clone https://github.com/MuhammadTanveerAbbas/Validax.git
-cd validax
+git clone https://github.com/MuhammadTanveerAbbas/Validax-Email-Validation.git
+cd Validax-Email-Validation.git

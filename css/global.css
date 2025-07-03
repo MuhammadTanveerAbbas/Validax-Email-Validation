@@ -10,7 +10,7 @@
   --clr-background: #242629;
   --clr-headline: #fffffe;
   --clr-paragraph: #94a1b2;
-  --clr-card-bg: #000000;
+  --clr-card-bg: #16161a;
   --clr-button-bg: #7f5af0;
   --clr-button-text: #fffffe;
   --clr-border: rgba(255, 255, 255, 0.1);
@@ -47,7 +47,9 @@ body {
   margin: 0;
   min-height: 100vh;
   padding-bottom: 80px;
-  background: linear-gradient(to bottom left, #0f172a, #1e1a78, #0f172a);
+  background: linear-gradient(135deg, #16161a 0%, #1f1f28 40%, #2a2a37 75%, #16161a 100%),
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.02) 0, rgba(255, 255, 255, 0.02) 1px, transparent 1px, transparent 20px),
+    radial-gradient(ellipse at bottom right, rgba(127, 90, 240, 0.08), transparent 60%);
   background-blend-mode: overlay;
   overflow-x: hidden;
 }
@@ -107,19 +109,16 @@ nav {
   position: relative;
   height: 70px;
   padding: 0 var(--gutter);
-  background: rgba(20, 20, 20, 0.3);
-  /* More transparency */
-  backdrop-filter: blur(25px) saturate(160%);
-  -webkit-backdrop-filter: blur(25px) saturate(160%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-  /* Stronger glassmorphic shadow */
+  background: var(--clr-nav);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 999;
+  backdrop-filter: blur(25px) saturate(160%);
+  border-bottom: 1px solid var(--clr-border);
+  opacity: 0;
+  animation: slideDown 0.8s ease forwards;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
 }
-
 
 nav .logo img {
   width: 40px;

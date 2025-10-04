@@ -34,7 +34,7 @@
     <div class="contact-form" id="formContainer">
       <h1>Contact Me</h1>
       <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value=" write here web3forms access key" />
+        <input type="hidden" name="access_key" id="web3formsKey" value="" />
         <input type="hidden" name="auto_response" value="Thanks for reaching out! We'll get back to you shortly." />
         <input type="hidden" name="from_name" value="Muhammad Tanveer Abbas" />
         <input type="hidden" name="replyto" value="your@email.com" />
@@ -84,8 +84,10 @@
     </div>
   </footer>
 
+  <script src="javascript/config.js"></script>
   <script>
     (function () {
+      document.getElementById("web3formsKey").value = CONFIG.WEB3FORMS_ACCESS_KEY;
       const form = document.getElementById("contactForm");
       const container = document.getElementById("formContainer");
       const thankYou = document.getElementById("thankYouMessage");

@@ -14,7 +14,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
       const emailInput = document.getElementById("username");
       const email = emailInput ? emailInput.value.trim() : "";
-      const apiKey = "write here"; // Replace with your actual API key from emailvalidation.io
+      const apiKey = CONFIG.EMAIL_VALIDATION_API_KEY;
       const url = `https://api.emailvalidation.io/v1/info?apikey=${apiKey}&email=${encodeURIComponent(
         email
       )}`;

@@ -35,18 +35,39 @@
       <h1>Contact Me</h1>
       <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value=" write here web3forms access key" />
-        <!-- write here web3forms access key -->
         <input type="hidden" name="auto_response" value="Thanks for reaching out! We'll get back to you shortly." />
         <input type="hidden" name="from_name" value="Muhammad Tanveer Abbas" />
         <input type="hidden" name="replyto" value="your@email.com" />
 
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Enter your name" required />
-
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email" required />
-
-        <label for="message">Message</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required style="margin-bottom: 1rem;" />
+        <input type="email" id="email" name="email" placeholder="Enter your email" required style="margin-bottom: 1rem;" />
+        
+        <div style="margin-bottom: 1rem;">
+          <label style="color: var(--clr-paragraph); margin-bottom: 0.5rem; display: block;">Service:</label>
+          <div class="radio-grid" style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <label style="color: var(--clr-paragraph); display: flex; align-items: center; gap: 0.3rem;">
+              <input type="radio" name="service" value="website" required />
+              Website
+            </label>
+            <label style="color: var(--clr-paragraph); display: flex; align-items: center; gap: 0.3rem;">
+              <input type="radio" name="service" value="ecommerce" required />
+              Ecommerce
+            </label>
+            <label style="color: var(--clr-paragraph); display: flex; align-items: center; gap: 0.3rem;">
+              <input type="radio" name="service" value="portfolio" required />
+              Portfolio
+            </label>
+            <label style="color: var(--clr-paragraph); display: flex; align-items: center; gap: 0.3rem;">
+              <input type="radio" name="service" value="blog" required />
+              Blog
+            </label>
+            <label style="color: var(--clr-paragraph); display: flex; align-items: center; gap: 0.3rem;">
+              <input type="radio" name="service" value="custom" required />
+              Custom
+            </label>
+          </div>
+        </div>
+        
         <textarea id="message" name="message" placeholder="Write your message" required></textarea>
 
         <button type="submit">Send Message</button>
@@ -62,7 +83,6 @@
       <p>&copy; 2025 Validax. All rights reserved.</p>
     </div>
   </footer>
-
 
   <script>
     (function () {

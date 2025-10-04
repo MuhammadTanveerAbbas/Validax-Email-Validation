@@ -9,8 +9,7 @@ window.addEventListener("DOMContentLoaded", () => {
       e.preventDefault(); // Prevents the form from submitting and refreshing the page
       const validateBtn = document.getElementById("validateBtn");
       validateBtn.disabled = true;
-      resultCont.innerHTML =
-        '<img src="assets/images/loading.svg" width="40" alt="Loading...">';
+      resultCont.innerHTML = '<div class="dot-loader"><span></span><span></span><span></span></div>';
 
       const emailInput = document.getElementById("username");
       const email = emailInput ? emailInput.value.trim() : "";

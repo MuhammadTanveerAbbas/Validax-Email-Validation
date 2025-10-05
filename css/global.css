@@ -391,6 +391,7 @@ html {
   scroll-behavior: smooth;
   background: var(--clr-bg);
   color: var(--clr-paragraph);
+  overflow-x: hidden;
 }
 
 body {
@@ -399,6 +400,7 @@ body {
   padding-bottom: 80px;
   background: linear-gradient(180deg, #000000 0%, #1a1a1a 100%);
   overflow-x: hidden;
+  overflow-y: auto;
   transition: background 0.3s ease, color 0.3s ease;
 }
 
@@ -586,8 +588,8 @@ footer p {
 .about-section,
 .contact-form {
   width: clamp(var(--container-min), 90%, var(--container-max));
-  margin: 3rem auto;
-  padding: calc(var(--gutter)*1.5);
+  margin: clamp(1rem, 3vw, 3rem) auto;
+  padding: clamp(0.75rem, 2vw, calc(var(--gutter)*1.5));
   background: var(--clr-card-bg);
   border-radius: var(--radius);
   border: 1px solid var(--clr-border);
@@ -722,6 +724,25 @@ button:focus-visible,
 @media (max-width: 600px) {
   html {
     font-size: var(--fs-xs);
+  }
+  
+  body {
+    padding-bottom: 70px;
+  }
+  
+  main {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .container,
+  .about-section,
+  .contact-form {
+    margin: 1rem auto;
+    padding: 1rem;
   }
   
   .radio-grid {

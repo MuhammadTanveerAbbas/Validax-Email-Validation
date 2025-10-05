@@ -388,19 +388,18 @@
 html {
   font-family: var(--font-primary);
   font-size: var(--fs-sm);
-  scroll-behavior: smooth;
   background: var(--clr-bg);
   color: var(--clr-paragraph);
-  overflow-x: hidden;
+  overflow: hidden;
+  height: 100vh;
 }
 
 body {
   margin: 0;
-  min-height: 100vh;
+  height: 100vh;
   padding-bottom: 80px;
   background: linear-gradient(180deg, #000000 0%, #1a1a1a 100%);
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: hidden;
   transition: background 0.3s ease, color 0.3s ease;
 }
 
@@ -409,9 +408,8 @@ body {
 }
 
 .fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.8s ease forwards;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @keyframes fadeInUp {
@@ -430,9 +428,8 @@ h6 {
   color: var(--clr-headline);
   font-weight: 600;
   line-height: 1.2;
-  opacity: 0;
-  transform: translateY(-20px) scale(0.98);
-  animation: fadeInDown 0.8s ease forwards;
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 h1 {
@@ -445,8 +442,7 @@ p {
   color: var(--clr-paragraph);
   line-height: 1.6;
   margin-bottom: var(--gutter);
-  opacity: 0;
-  animation: fadeIn 1.2s ease forwards;
+  opacity: 1;
 }
 
 a {
@@ -482,8 +478,7 @@ nav {
   justify-content: space-between;
   backdrop-filter: blur(25px) saturate(160%);
   border-bottom: 1px solid var(--clr-border);
-  opacity: 0;
-  animation: slideDown 0.8s ease forwards;
+  opacity: 1;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
 }
 
@@ -566,8 +561,7 @@ footer {
   align-items: center;
   justify-content: center;
   backdrop-filter: blur(25px) saturate(160%);
-  opacity: 0;
-  animation: slideDown 0.8s ease forwards;
+  opacity: 1;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
   z-index: 999;
 }
@@ -594,9 +588,8 @@ footer p {
   border-radius: var(--radius);
   border: 1px solid var(--clr-border);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  animation: fadeIn 1s ease forwards;
-  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 1;
+  transition: transform 0.4s ease;
 }
 
 @media (min-width: 769px) {
@@ -724,25 +717,32 @@ button:focus-visible,
 @media (max-width: 600px) {
   html {
     font-size: var(--fs-xs);
+    height: 100vh;
+    overflow: hidden;
   }
   
   body {
     padding-bottom: 70px;
+    height: 100vh;
+    overflow: hidden;
   }
   
   main {
-    padding-top: 2rem;
+    padding-top: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: calc(100vh - 140px);
   }
   
   .container,
   .about-section,
   .contact-form {
-    margin: 1rem auto;
-    padding: 1rem;
+    margin: 0.5rem auto;
+    padding: 0.75rem;
+    max-height: 80vh;
+    backdrop-filter: none;
   }
   
   .radio-grid {

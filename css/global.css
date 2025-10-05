@@ -473,9 +473,9 @@ nav {
   height: 70px;
   padding: 0 var(--gutter);
   background: var(--clr-nav);
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   backdrop-filter: blur(25px) saturate(160%);
   border-bottom: 1px solid var(--clr-border);
   opacity: 1;
@@ -500,6 +500,43 @@ nav ul {
   gap: 1rem;
   margin: 0;
   list-style: none;
+  justify-content: center;
+  grid-column: 2;
+  margin-left: -3.5rem;
+}
+
+nav .github-link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: var(--clr-nav-text);
+  transition: color 0.3s ease;
+  grid-column: 3;
+}
+
+nav .github-link:hover {
+  color: var(--clr-accent-hover);
+}
+
+.social-icons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem auto;
+  width: 100%;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888888;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #ffffff;
 }
 
 nav li a {
@@ -507,14 +544,14 @@ nav li a {
   font-size: clamp(0.9rem, 0.9vw, 1.1rem);
   font-weight: 400;
   color: var(--clr-nav-text);
+  background: #666666;
   border-radius: var(--radius);
-  transition: background-color 0.25s ease, color 0.25s ease;
+  transition: color 0.25s ease;
 }
 
 nav li a:hover,
 nav li a:focus-visible {
-  background-color: var(--clr-accent-hover);
-  color: var(--clr-button-text);
+  color: #ffffff;
   outline: none;
 }
 
@@ -543,7 +580,8 @@ nav li a:focus-visible {
   }
 
   nav li a {
-    font-size: clamp(1rem, 4vw, 1.25rem);
+    font-size: 0.85rem;
+    padding: 0.3rem 0.6rem;
   }
 }
 
@@ -582,7 +620,7 @@ footer p {
 .about-section,
 .contact-form {
   width: clamp(var(--container-min), 90%, var(--container-max));
-  margin: clamp(1rem, 3vw, 3rem) auto;
+  margin: clamp(0.75rem, 2vw, 2rem) auto;
   padding: clamp(0.75rem, 2vw, calc(var(--gutter)*1.5));
   background: var(--clr-card-bg);
   border-radius: var(--radius);
@@ -728,12 +766,34 @@ button:focus-visible,
   }
   
   main {
-    padding-top: 1rem;
+    padding-top: 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     height: calc(100vh - 140px);
+  }
+  
+  nav ul {
+    margin-left: 0;
+  }
+  
+  nav li a {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+  
+  nav .logo img {
+    width: 28px;
+  }
+  
+  nav .logo span {
+    font-size: 0.85rem;
+  }
+  
+  nav .github-link svg {
+    width: 18px;
+    height: 18px;
   }
   
   .container,

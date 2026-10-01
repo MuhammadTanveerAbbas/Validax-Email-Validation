@@ -36,7 +36,7 @@ Typical contact forms require backend code or external plugins that slow website
 
 Many contact form solutions:
 
-- Depend on server-side code
+- Depend on server side code
 - Are prone to spam
 - Lack real time validation or good user feedback
 

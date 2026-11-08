@@ -1,0 +1,17 @@
+{
+  "name": "validax-email-validation",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Email validation tool with a small secure Node proxy for paid API calls.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check server.js && node --check javascript/config.js && node --check javascript/validation.js && node --check javascript/global.js && node --check javascript/contact.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}
